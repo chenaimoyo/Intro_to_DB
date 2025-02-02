@@ -1,34 +1,39 @@
-CREATE DATABASE alx_book_store;
-USE alx_book_store;
-create table Books (
-book_id int auto_increment primary key,
-title VARCHAR(130),
-author_id INT,
-price double,
-publication_date date,
-FOREIGN KEY (author_id) references Authors(author_id)
+CREATE DATABASE ALX_BOOK_STORE;
+USE ALX_BOOK_STORE;
+
+CREATE TABLE AUTHORS (
+    AUTHOR_ID INT AUTO_INCREMENT PRIMARY KEY,
+    AUTHOR_NAME VARCHAR(215)
 );
-create table Authors (
-author_id INT auto_increment primary key,
-author_name varchar(215)
+
+CREATE TABLE BOOKS (
+    BOOK_ID INT AUTO_INCREMENT PRIMARY KEY,
+    TITLE VARCHAR(130),
+    AUTHOR_ID INT,
+    PRICE DOUBLE,
+    PUBLICATION_DATE DATE,
+    FOREIGN KEY (AUTHOR_ID) REFERENCES AUTHORS(AUTHOR_ID)
 );
-create table Customers (
-customer_id INT auto_increment primary key,
-customer_name varchar(215),
-email varchar(215),
-address text
+
+CREATE TABLE CUSTOMERS (
+    CUSTOMER_ID INT AUTO_INCREMENT PRIMARY KEY,
+    CUSTOMER_NAME VARCHAR(215),
+    EMAIL VARCHAR(215),
+    ADDRESS TEXT
 );
-create table Orders (
-order_id INT auto_increment primary key,
-customer_id int,
-order_date DATE,
-foreign key (customer_id) references Customers(customer_id)
+
+CREATE TABLE ORDERS (
+    ORDER_ID INT AUTO_INCREMENT PRIMARY KEY,
+    CUSTOMER_ID INT,
+    ORDER_DATE DATE,
+    FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMERS(CUSTOMER_ID)
 );
-create table Order_Details (
-orderdetailedid int auto_increment primary key,
-order_id int,
-book_id int,
-quantity double,
-foreign key (order_id) references Orders(order_id),
-foreign key (book_id) references Books(book_id)
+
+CREATE TABLE ORDER_DETAILS (
+    ORDERDETAILEDID INT AUTO_INCREMENT PRIMARY KEY,
+    ORDER_ID INT,
+    BOOK_ID INT,
+    QUANTITY DOUBLE,
+    FOREIGN KEY (ORDER_ID) REFERENCES ORDERS(ORDER_ID),
+    FOREIGN KEY (BOOK_ID) REFERENCES BOOKS(BOOK_ID)
 );
