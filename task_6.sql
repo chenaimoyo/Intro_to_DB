@@ -1,5 +1,14 @@
-INSERT INTO customers (customer_id, customer_name, email, address)
-VALUES
-(2, 'Blessing Malik', 'bmalik@sandtech.com', '124 Happiness Ave.'),
-    (3, 'Obed Ehoneah', 'eobed@sandtech.com', '125 Happiness Ave.'),
-    (4, 'Nehemial Kamolu', 'nkamolu@sandtech.com', '126 Happiness Ave.');
+INSERT INTO AUTHORS (AUTHOR_NAME) VALUES ('J.K. Rowling');
+INSERT INTO AUTHORS (AUTHOR_NAME) VALUES ('George Orwell');
+
+INSERT INTO BOOKS (TITLE, AUTHOR_ID, PRICE, PUBLICATION_DATE) VALUES ('Harry Potter and the Philosopher\'s Stone', 1, 19.99, '1997-06-26');
+INSERT INTO BOOKS (TITLE, AUTHOR_ID, PRICE, PUBLICATION_DATE) VALUES ('1984', 2, 15.99, '1949-06-08');
+
+INSERT INTO CUSTOMERS (CUSTOMER_NAME, EMAIL, ADDRESS) VALUES ('Cole Baidoo', 'cbaidoo@sandtech.com', '123 Happiness Ave.');
+INSERT INTO CUSTOMERS (CUSTOMER_NAME, EMAIL, ADDRESS) VALUES ('Blessing Malik', 'bmalik@sandtech.com', '124 Happiness Ave.');
+
+INSERT INTO ORDERS (CUSTOMER_ID, ORDER_DATE) VALUES (1, '2023-10-01');
+INSERT INTO ORDERS (CUSTOMER_ID, ORDER_DATE) VALUES (2, '2023-10-05');
+
+INSERT INTO ORDER_DETAILS (ORDER_ID, BOOK_ID, QUANTITY) VALUES (1, 1, 2);
+INSERT INTO ORDER_DETAILS (ORDER_ID, BOOK_ID, QUANTITY) VALUES (2, 2, 1);
